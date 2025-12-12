@@ -1,0 +1,141 @@
+.Menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.menu-icons a {
+  margin-left: 0.75rem;
+  text-decoration: none;
+}
+
+.breadcrumb {
+  padding: 0 1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.Oversigt_layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.Sticky_Filter label {
+  display: block;
+  margin: 0.25rem 0;
+}
+
+.Sticky_Filter h5 {
+  margin-top: 0.75rem;
+}
+
+.grid_1-1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.produkt-kort img {
+  width: 100%;
+  display: block;
+}
+
+.produkt-kort h4 {
+  margin: 0.5rem 0 0.25rem;
+}
+
+.Produkt_Section_1-2,
+.Produkt_Section_1-3,
+.Produkt_Section_3-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  align-items: center;
+}
+
+.Produkt_Section_1-2 img,
+.Produkt_Section_1-3 img,
+.Produkt_Section_3-1 img {
+  width: 100%;
+  display: block;
+}
+
+.Info_section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.Info_section img {
+  max-width: 180px;
+}
+
+.Footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .Menu {
+    padding: 1rem 2rem;
+  }
+
+  .breadcrumb {
+    padding: 0 2rem;
+  }
+
+  .Oversigt_layout {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .Produkt_Section_1-2,
+  .Produkt_Section_1-3,
+  .Produkt_Section_3-1 {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .Info_section {
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .Footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Oversigt_layout {
+    grid-template-columns: 240px 1fr;
+  }
+
+  .Sticky_Filter {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+
+  .grid_1-1-1-1 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .Footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
