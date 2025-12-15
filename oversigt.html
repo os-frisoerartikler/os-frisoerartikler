@@ -3,41 +3,147 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+/>
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/oversigt.css" />
+    <link rel="stylesheet" href="css/headermenu.css" />
     <title>Oversigt</title>
   </head>
 
   <body>
-    <header class="Menu">
-      <button class="burger">☰</button>
-      <h2 class="logo">OS<br />FRISØRARTIKLER</h2>
-      <nav class="menu-icons">
-        <a href="#">🔍</a>
-        <a href="#">👤</a>
-        <a href="#">♡</a>
-        <a href="#">🛒</a>
-      </nav>
+    <header class="site-header">
+      <div class="bar">
+        <button
+          class="icon-btn burger"
+          type="button"
+          aria-label="Åbn menu"
+          aria-controls="drawer"
+          aria-expanded="false"
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        </button>
+    
+        <a class="brand" href="index.html" aria-label="Gå til forsiden">
+          <img src="IMG/OSlogo.svg" alt="OS Frisørartikler" />
+        </a>
+    
+        <nav class="actions" aria-label="Genveje">
+          <a class="icon-btn" href="#" aria-label="Søg">
+            <span class="material-symbols-rounded" aria-hidden="true">search</span>
+          </a>
+
+          <div class="dropdown search-panel" hidden>
+            <input
+              type="search"
+              placeholder="Søg efter produkter…"
+              aria-label="Søg"
+            />
+          </div>
+    
+          <a class="icon-btn" href="#" aria-label="Konto">
+            <span class="material-symbols-rounded" aria-hidden="true">person</span>
+          </a>
+    
+          <a class="icon-btn" href="#" aria-label="Favoritter">
+            <span class="material-symbols-rounded" aria-hidden="true">favorite</span>
+          </a>
+    
+          <a class="icon-btn" href="#" aria-label="Kurv">
+            <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
+          </a>
+          <div class="dropdown cart-panel" hidden>
+            <h3>Din kurv</h3>
+            <p>Du har ikke puttet noget i din kurv endnu.</p>
+          </div>
+        </nav>
+      </div>
+    
+      <div class="backdrop" hidden></div>
+    
+      <aside class="drawer" id="drawer" aria-label="Menu" hidden>
+        <div class="drawer-top">
+          <p class="drawer-title">Menu</p>
+    
+          <button class="icon-btn close" type="button" aria-label="Luk menu">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+          </button>
+        </div>
+    
+        <nav class="drawer-nav" aria-label="Kategorier">
+          <a href="index.html">Forside</a>
+          <a href="404.html">Hårpleje</a>
+          <a href="404.html">Styling</a>
+          <a href="404.html">Farve</a>
+          <a href="404.html">Redskaber</a>
+          <a href="404.html">Skæg & herre</a>
+          <a href="404.html">Tilbud</a>
+          <a href="404.html">Nyheder</a>
+          <a href="404.html">Kontakt</a>
+        </nav>
+    
+        <div class="drawer-bottom">
+          <a class="drawer-link" href="forareforare.html">Se alle kategorier</a>
+        </div>
+      </aside>
     </header>
+    
+    
 
     <h5 class="breadcrumb">Forsiden > Hårpleje > Shampoo</h5>
 
     <main class="Oversigt_layout">
-      <aside class="Sticky_Filter">
-        <h3>Filtre</h3>
-
-        <h5>Pris</h5>
-        <label><input type="checkbox" /> 0–199</label>
-        <label><input type="checkbox" /> 200–399</label>
-        <label><input type="checkbox" /> 400+</label>
-
-        <h5>Brand</h5>
-        <label><input type="checkbox" /> K18</label>
-        <label><input type="checkbox" /> Kevin Murphy</label>
-        <label><input type="checkbox" /> Olaplex</label>
-        <label><input type="checkbox" /> Redken</label>
+      <aside class="filters">
+        <h2>Filtre</h2>
+      
+        <details class="filter" name="filters">
+          <summary>Pris</summary>
+          <div class="content">
+            <div class="price-values">
+              <span><span id="minLabel">0</span> kr</span>
+              <span><span id="maxLabel">1000</span> kr</span>
+            </div>
+      
+            <div class="ranges">
+              <input id="minRange" type="range" min="0" max="1000" value="0" step="10" />
+              <input id="maxRange" type="range" min="0" max="1000" value="1000" step="10" />
+            </div>
+          </div>
+        </details>
+      
+        <details class="filter" name="filters">
+          <summary>Brand</summary>
+          <div class="content">
+            <div class="list">
+              <label><input type="checkbox" /> K18</label>
+              <label><input type="checkbox" /> Kevin Murphy</label>
+              <label><input type="checkbox" /> Olaplex</label>
+              <label><input type="checkbox" /> Redken</label>
+              <label><input type="checkbox" /> Maria Nila</label>
+              <label><input type="checkbox" /> Moroccanoil</label>
+            </div>
+          </div>
+        </details>
+      
+        <details class="filter" name="filters">
+          <summary>Egenskaber</summary>
+          <div class="content">
+            <div class="list">
+              <label><input type="checkbox" /> Sulfatfri</label>
+              <label><input type="checkbox" /> Farvebevarende</label>
+              <label><input type="checkbox" /> Fugt</label>
+              <label><input type="checkbox" /> Volume</label>
+              <label><input type="checkbox" /> Repair</label>
+              <label><input type="checkbox" /> Skæl</label>
+            </div>
+          </div>
+        </details>
+      
+        <button class="reset" type="button" id="resetFilters">Nulstil</button>
       </aside>
-
+      
       <section class="Oversigt_content">
         <h3>Shampoo</h3>
         <p>Populære produkter / Shampoo</p>
@@ -211,6 +317,8 @@
   </div>
     
     </footer>
+    <script src="JS/headermenu.js"></script>
+
   </body>
 </html>
 
