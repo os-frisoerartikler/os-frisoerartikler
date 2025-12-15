@@ -59,3 +59,13 @@ p {
   font-size: var(--p-size);
   font-weight: var(--font-weight-regular);
 }
+
+.button {
+  color: var(--the-brown);
+  background-color: var(--the-grey);
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: var(--h4-size);
+  font-weight: var(--font-weight-medium);
+}
