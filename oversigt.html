@@ -1,15 +1,18 @@
+<!-- oversigt.html -->
 <!DOCTYPE html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
-/>
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/oversigt.css" />
     <link rel="stylesheet" href="css/headermenu.css" />
+    <link rel="stylesheet" href="css/oversigt.css" />
+
     <title>Oversigt</title>
   </head>
 
@@ -25,14 +28,16 @@
         >
           <span class="material-symbols-rounded" aria-hidden="true">menu</span>
         </button>
-    
+
         <a class="brand" href="index.html" aria-label="Gå til forsiden">
-          <img src="IMG/OSlogo.svg" alt="OS Frisørartikler" />
+          <img src="img/Asset_1.svg" alt="OS Frisørartikler" />
         </a>
-    
+
         <nav class="actions" aria-label="Genveje">
-          <a class="icon-btn" href="#" aria-label="Søg">
-            <span class="material-symbols-rounded" aria-hidden="true">search</span>
+          <a class="icon-btn" href="#" id="searchBtn" aria-label="Søg">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >search</span
+            >
           </a>
 
           <div class="dropdown search-panel" hidden>
@@ -42,36 +47,67 @@
               aria-label="Søg"
             />
           </div>
-    
-          <a class="icon-btn" href="#" aria-label="Konto">
-            <span class="material-symbols-rounded" aria-hidden="true">person</span>
+
+          <a class="icon-btn" href="#" id="accountBtn" aria-label="Konto">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >person</span
+            >
           </a>
-    
-          <a class="icon-btn" href="#" aria-label="Favoritter">
-            <span class="material-symbols-rounded" aria-hidden="true">favorite</span>
+
+          <div class="dropdown account-panel" hidden>
+            <h3>Konto</h3>
+            <p>Log ind for at se ordrer og gemme favoritter.</p>
+            <button class="panel-btn" type="button">Log ind</button>
+          </div>
+
+          <a class="icon-btn" href="#" id="favBtn" aria-label="Favoritter">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >favorite</span
+            >
           </a>
-    
-          <a class="icon-btn" href="#" aria-label="Kurv">
-            <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
+
+          <div class="dropdown fav-panel" hidden>
+            <h3>Favoritter</h3>
+            <p>Du har ingen favoritter endnu.</p>
+          </div>
+
+          <a class="icon-btn" href="#" id="cartBtn" aria-label="Kurv">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >shopping_bag</span
+            >
+            <span class="badge" aria-hidden="true">0</span>
           </a>
+
           <div class="dropdown cart-panel" hidden>
             <h3>Din kurv</h3>
-            <p>Du har ikke puttet noget i din kurv endnu.</p>
+
+            <p class="cart-empty">Du har ikke puttet noget i din kurv endnu.</p>
+
+            <ul class="cart-items" hidden></ul>
+
+            <div class="cart-footer" hidden>
+              <p class="cart-total">
+                I alt:
+                <strong><span class="cart-total-value">0</span>,00 kr</strong>
+              </p>
+              <a href="betaling.html" class="checkout-btn">Gå til betaling</a>
+            </div>
           </div>
         </nav>
       </div>
-    
+
       <div class="backdrop" hidden></div>
-    
-      <aside class="drawer" id="drawer" aria-label="Menu" hidden>
+
+      <aside class="drawer" id="drawer" hidden>
         <div class="drawer-top">
           <p class="drawer-title">Menu</p>
-    
           <button class="icon-btn close" type="button" aria-label="Luk menu">
-            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
           </button>
         </div>
-    
+
         <nav class="drawer-nav" aria-label="Kategorier">
           <a href="index.html">Forside</a>
           <a href="404.html">Hårpleje</a>
@@ -83,242 +119,372 @@
           <a href="404.html">Nyheder</a>
           <a href="404.html">Kontakt</a>
         </nav>
-    
+
         <div class="drawer-bottom">
           <a class="drawer-link" href="forareforare.html">Se alle kategorier</a>
         </div>
       </aside>
     </header>
-    
-    
 
-    <h5 class="breadcrumb">Forsiden > Hårpleje > Shampoo</h5>
+    <main>
+      <div class="oversigt-layout">
+        <aside class="filters" aria-label="Filtre">
+          <h2>Filtre</h2>
 
-    <main class="Oversigt_layout">
-      <aside class="filters">
-        <h2>Filtre</h2>
-      
-        <details class="filter" name="filters">
-          <summary>Pris</summary>
-          <div class="content">
-            <div class="price-values">
-              <span><span id="minLabel">0</span> kr</span>
-              <span><span id="maxLabel">1000</span> kr</span>
+          <details class="filter" name="filters">
+            <summary>Pris</summary>
+            <div class="content">
+              <div class="price-values">
+                <span><span id="minLabel">0</span> kr</span>
+                <span><span id="maxLabel">1000</span> kr</span>
+              </div>
+
+              <div class="ranges">
+                <input
+                  id="minRange"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value="0"
+                  step="10"
+                />
+                <input
+                  id="maxRange"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value="1000"
+                  step="10"
+                />
+              </div>
             </div>
-      
-            <div class="ranges">
-              <input id="minRange" type="range" min="0" max="1000" value="0" step="10" />
-              <input id="maxRange" type="range" min="0" max="1000" value="1000" step="10" />
+          </details>
+
+          <details class="filter" name="filters">
+            <summary>Brand</summary>
+            <div class="content">
+              <div class="list">
+                <label><input type="checkbox" /> K18</label>
+                <label><input type="checkbox" /> Kevin Murphy</label>
+                <label><input type="checkbox" /> Olaplex</label>
+                <label><input type="checkbox" /> Redken</label>
+                <label><input type="checkbox" /> Maria Nila</label>
+                <label><input type="checkbox" /> Moroccanoil</label>
+              </div>
             </div>
-          </div>
-        </details>
-      
-        <details class="filter" name="filters">
-          <summary>Brand</summary>
-          <div class="content">
-            <div class="list">
-              <label><input type="checkbox" /> K18</label>
-              <label><input type="checkbox" /> Kevin Murphy</label>
-              <label><input type="checkbox" /> Olaplex</label>
-              <label><input type="checkbox" /> Redken</label>
-              <label><input type="checkbox" /> Maria Nila</label>
-              <label><input type="checkbox" /> Moroccanoil</label>
+          </details>
+
+          <details class="filter" name="filters">
+            <summary>Egenskaber</summary>
+            <div class="content">
+              <div class="list">
+                <label><input type="checkbox" /> Sulfatfri</label>
+                <label><input type="checkbox" /> Farvebevarende</label>
+                <label><input type="checkbox" /> Fugt</label>
+                <label><input type="checkbox" /> Volume</label>
+                <label><input type="checkbox" /> Repair</label>
+                <label><input type="checkbox" /> Skæl</label>
+              </div>
             </div>
+          </details>
+
+          <button class="reset" id="resetFilters" type="button">Nulstil</button>
+        </aside>
+
+        <section class="oversigt-content">
+          <div class="category-intro">
+            <h3 class="category-title">Shampoo</h3>
+            <p class="category-text">
+              Shampoo er for mange en nødvendighed, der renser håret fra skidt
+              og snavs, men en god shampoo kan meget mere end det. Med den rette
+              shampoo giver du dit hår de bedste forudsætninger for at forblive
+              sundt og velplejet. Se vores store udvalg af hårshampoo her.
+            </p>
           </div>
-        </details>
-      
-        <details class="filter" name="filters">
-          <summary>Egenskaber</summary>
-          <div class="content">
-            <div class="list">
-              <label><input type="checkbox" /> Sulfatfri</label>
-              <label><input type="checkbox" /> Farvebevarende</label>
-              <label><input type="checkbox" /> Fugt</label>
-              <label><input type="checkbox" /> Volume</label>
-              <label><input type="checkbox" /> Repair</label>
-              <label><input type="checkbox" /> Skæl</label>
+
+          <div class="section-title">
+            <span class="line"></span>
+            <h4>Populære produkter i Shampoo</h4>
+            <span class="line"></span>
+          </div>
+
+          <section class="Produkt_list">
+            <div class="grid_1-1-1-1">
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="249"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">249,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="199"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">199,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="299"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">299,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
+
+              <article
+                class="produkt-kort"
+                data-name="Produkt navn"
+                data-price="179"
+              >
+                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
+                <h4>Produkt navn</h4>
+                <div class="product-meta">
+                  <p class="price">179,00 kr</p>
+                  <button
+                    class="add-to-cart"
+                    type="button"
+                    aria-label="Læg i kurv"
+                  >
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                  </button>
+                </div>
+              </article>
             </div>
-          </div>
-        </details>
-      
-        <button class="reset" type="button" id="resetFilters">Nulstil</button>
-      </aside>
-      
-      <section class="Oversigt_content">
-        <h3>Shampoo</h3>
-        <p>Populære produkter / Shampoo</p>
+          </section>
 
-        <section class="Produkt_list">
-          <div class="grid_1-1-1-1">
-            <article class="produkt-kort">
-              <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-              <h4>Produkt navn</h4>
-              <p>249,00 kr</p>
-            </article>
+          <section class="Produkt_Section_1-2">
+            <img src="img/ligende_Produkt_2.jpg" alt="billede" />
+            <div class="Text_1">
+              <h2>Hårshampoo til enhver hårtype</h2>
+              <p>indsæt tekst</p>
+            </div>
+          </section>
 
-            <article class="produkt-kort">
-              <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-              <h4>Produkt navn</h4>
-              <p>199,00 kr</p>
-            </article>
+          <section class="Produkt_Section_1-3">
+            <div class="Text_2">
+              <h2>Få en salonoplevelse med frisørshampoo</h2>
+              <p>indsæt tekst</p>
+            </div>
+            <img src="img/ligende_Produkt_2.jpg" alt="billede" />
+          </section>
 
-            <article class="produkt-kort">
-              <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-              <h4>Produkt navn</h4>
-              <p>299,00 kr</p>
-            </article>
+          <section class="Produkt_Section_3-1">
+            <img src="img/ligende_Produkt_2.jpg" alt="billede" />
+            <div class="Text_3">
+              <h2>Shop shampoo i høj kvalitet hos OS Frisørartikler</h2>
+              <p>indsæt tekst</p>
+            </div>
+          </section>
 
-            <article class="produkt-kort">
-              <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-              <h4>Produkt navn</h4>
-              <p>179,00 kr</p>
-            </article>
-
-            <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-              <article class="produkt-kort">
-                <img src="img/ligende_Produkt_2.jpg" alt="produkt" />
-                <h4>Produkt navn</h4>
-                <p>179,00 kr</p>
-              </article>
-
-
-          </div>
+          <section class="Info_section">
+            <h5>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis libero porro tempore maiores beatae natus molestias
+              temporibus recusandae, cum quis.
+            </h5>
+          </section>
         </section>
-
-        <section class="Produkt_Section_1-2">
-          <img src="img/ligende_Produkt_2.jpg" alt="billede" />
-          <div class="Text_1">
-            <h2>Hårshampoo til enhver hårtype</h2>
-            <p>indsæt tekst</p>
-          </div>
-        </section>
-
-        <section class="Produkt_Section_1-3">
-          <div class="Text_2">
-            <h2>Få en salonoplevelse med frisørshampoo</h2>
-            <p>indsæt tekst</p>
-          </div>
-          <img src="img/ligende_Produkt_2.jpg" alt="billede" />
-        </section>
-
-        <section class="Produkt_Section_3-1">
-          <img src="img/ligende_Produkt_2.jpg" alt="billede" />
-          <div class="Text_3">
-            <h2>Shop shampoo i høj kvalitet hos OS Frisørartikler</h2>
-            <p>indsæt tekst</p>
-          </div>
-        </section>
-
-        <section class="Info_section">
-          <h5>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis libero porro tempore maiores beatae natus molestias temporibus recusandae, cum quis, mollitia, laboriosam dolorum distinctio ipsum illo in quibusdam possimus voluptas.
-          </h5>
-          <img src="img/ligende_Produkt_2.jpg" alt="trustpilot" />
-        </section>
-      </section>
+      </div>
     </main>
 
     <footer>
-        <div class="Info_section">
-             <div class="Info_text"></div>
-             <h5>Levering 1 - 2 hverdage        Kundeservice 2090 5070        Fri fragt over 499,-        Fysisk butik i KBH </h5>
+      <div class="Footer-container">
+        <div class="footer-section">
+          <h3>Kundeservice</h3>
+          <p>OS Frisørartikler APS</p>
+          <p>Telefonnr.: 2090 5070</p>
         </div>
-        <div><img src="img/TrustPilot_reviews.png" alt="Trust Pilot"></div>
-        </div>
-    <div class="Footer-container">
-    <div class="footer-brand">
-      <h2 class="footer-logo">OS<br>FRISØRARTIKLER</h2>
-
-      <div class="social-icons">
-        <a href="#"><img src="img/Instagram_Icon.svg" alt="Instagram"></a>
-        <a href="#"><img src="img/Facebook_Icon.svg" alt="Facebook"></a>
-        <a href="#"><img src="img/TikTok_Icon.svg" alt="TikTok"></a>
       </div>
-    </div>
-
-    <!-- Opening Hours -->
-    <div class="footer-section">
-      <h3>Butikkens åbningstider</h3>
-      <p>Man–Fre 09.00–18.00</p>
-      <p>Lør–Søn 10.00–15.00</p>
-
-      <h3 class="footer-subtitle">Adresse</h3>
-      <p>Jagtvej 1 2200 Nørrebro</p>
-    </div>
-
-    <!-- Information Links -->
-    <div class="footer-section">
-      <h3>Information</h3>
-      <p>Om Virksomheden</p>
-      <p>FAQ</p>
-      <p>Handelsbetingelser</p>
-      <p>Kundeservice</p>
-      <p>Er du frisør?</p>
-      <p>Blog</p>
-      <p>Fortrydelsesformular</p>
-      <p>Cookie Information</p>
-    </div>
-
-    <!-- Customer Service -->
-    <div class="footer-section">
-      <h3>Kundeservice</h3>
-      <p>OS Frisørartikler APS</p>
-      <p>Telefonnr.: 2090 5070</p>
-      <p>E-mail:</p>
-      <p>CVR-nummer: 35874623</p>
-      <br>
-      <p>
-        Fysisk salg, ombytning eller returnering<br>
-        foregår i vores butik på Jagtvej 1 2200 Nørrebro.
-      </p>
-    </div>
-
-  </div>
-    
     </footer>
-    <script src="JS/headermenu.js"></script>
 
+    <script src="JS/headermenu.js"></script>
   </body>
 </html>
-
