@@ -1,0 +1,29 @@
+.slideshow {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.slide {
+  scroll-snap-align: start;
+  height: 100vh;
+  /* display: grid;
+  place-items: center; */
+}
+
+#slide1 {
+  display: grid;
+  place-items: center;
+  justify-self: center;
+}
+
+.slide1_text {
+  text-align: center;
+}
+
+#button_2 {
+  display: flex;
+  justify-content: center;
+}
+
+/* make the header / menu sticky and make sure the footer aint */
