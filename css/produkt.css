@@ -5,7 +5,7 @@ body {
 
 .product-hero {
   position: relative;
-  height: 125vh;
+  height: 145vh;
   background-image: url("../img/AirWash_background.webp");
   background-size: cover;
   background-position: center;
@@ -14,42 +14,42 @@ body {
 }
 
 .breadcrumb {
-  margin: 2rem 2rem 2rem 2rem;
+  margin: 2rem 2rem 1rem 2rem;
 }
 
 .Produkt_info {
   margin-left: auto;
-  max-width: 420px;
+  max-width: 350px;
   background: #fffaf7bb;
-  padding: 2.5rem 2.75rem;
+  padding: 1.5rem 2rem;
   border: 1px solid #8f2b22;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
   border-radius: 4px;
   margin-right: 10rem;
 }
 .Produkt_info ul {
-  padding-left: 1.2rem;
-  margin: 0 0 1.5rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  padding-left: 1rem;
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .Produkt_icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
-  margin-bottom: -40px;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  margin-bottom: -30px;
 }
 
 .Produkt_icons img:first-child {
-  max-width: 150px;
-  margin-bottom: 90px;
+  max-width: 120px;
+  margin-bottom: 70px;
 }
 
 .Produkt_icons img:last-child {
-  max-width: 200px;
-  margin-left: 10px;
+  max-width: 160px;
+  margin-left: 8px;
 }
 
 .Produkt_info h3 {
@@ -72,29 +72,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
-  padding: 0.9rem 1rem;
+  width: 70%;
+  padding: 0.7rem 0.85rem;
   border-radius: 7px;
   border: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .add-to-cart-button {
   background-color: #8a0f0f;
   color: #ffffff;
-  padding: 0.65rem 1rem;
+  padding: 0.55rem 0.85rem;
 }
 
 .add-to-cart-button:hover {
   background-color: #7a0e0e;
-}
-
-.add-to-cart-button img {
-  width: 20px;
-  height: 20px;
-  margin-left: 0.5rem;
 }
 
 .check-stock-button {
@@ -169,14 +163,14 @@ body {
 }
 
 .Produkt_info p {
-  font-size: 1rem;
-  margin-top: 0.75rem;
-  line-height: 2;
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+  line-height: 1.8;
 }
 
 .Produkt_Imgs {
   position: relative;
-  margin: 3rem auto 0;
+  margin: 2rem auto 2rem;
   padding: 1rem 1.5rem;
   background: #ffffffb5;
   display: flex;
@@ -184,6 +178,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10;
 }
 
 .Produkt_Imgs img {
@@ -264,7 +259,7 @@ body {
 }
 
 .antal-container img {
-  margin-left: 80px;
+  margin-left: 70px;
 }
 
 .antal-container img:hover {
@@ -293,6 +288,10 @@ body {
 .footer-logo img {
   margin-top: 3rem;
   width: 200px;
+}
+
+.footer-brand {
+  margin-left: 6rem;
 }
 
 .social-icons img {
@@ -526,5 +525,8 @@ body {
   .footer-logo {
     font-size: 1.5rem;
     text-align: center;
+  }
+  .footer-brand {
+    margin-left: 0;
   }
 }
