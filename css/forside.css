@@ -1,3 +1,47 @@
+/* Front-page header overrides (scoped to index only) */
+body.front-page .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Prevent global content shift on the front page */
+body.front-page .slideshow,
+body.front-page main,
+body.front-page .content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Size inline SVG brand (overrides svg width/height attributes) */
+body.front-page .brand svg {
+  height: 42px !important;
+  width: auto !important;
+  max-width: 100%;
+  display: block;
+}
+
+/* Force the SVG vector color to the front-page color */
+body.front-page .brand svg path,
+body.front-page .brand svg circle,
+body.front-page .brand svg rect,
+body.front-page .brand svg polygon,
+body.front-page .brand svg g {
+  fill: #f6f5e8 !important;
+  stroke: none !important;
+}
+
+.material-symbols-rounded {
+  color: #f6f5e8;
+}
+
 .slideshow {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -20,6 +64,11 @@ img {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* FOOTER */
+.social-icons img {
+  display: inline-block !important;
 }
 
 /* SLIDE 1 - FRONT PAGE */
