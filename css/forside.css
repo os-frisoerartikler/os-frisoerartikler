@@ -318,6 +318,11 @@ img {
   }
 }
 
+/* SLIDE 6 */
+.slide6 {
+  height: 90vh;
+}
+
 /* MOBILE */
 @media (max-width: 425px) {
   /* SLIDE 2 */
