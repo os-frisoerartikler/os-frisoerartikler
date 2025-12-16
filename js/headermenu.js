@@ -242,6 +242,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  document.querySelectorAll(".add-to-basket").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".Ligende_Produkt");
+      if (card) addToCartFromCard(card);
+    });
+  });
+
+  document.querySelectorAll(".add-to-cart-button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".Produkt_info");
+      if (card) addToCartFromCard(card);
+    });
+  });
+
   const clearBtn = document.querySelector(".cart-clear");
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {

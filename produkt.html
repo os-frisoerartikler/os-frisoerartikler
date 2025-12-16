@@ -13,9 +13,9 @@
     />
     <title>Produkt Side</title>
   </head>
-  
+
   <body>
-        <header class="site-header">
+    <header class="site-header">
       <div class="bar">
         <button
           class="icon-btn burger"
@@ -108,7 +108,7 @@
 
         <nav class="drawer-nav" aria-label="Kategorier">
           <a href="index.html">Forside</a>
-          <a href="404.html">Hårpleje</a>
+          <a href="oversigt.html">Shampoo</a>
           <a href="404.html">Styling</a>
           <a href="404.html">Farve</a>
           <a href="404.html">Redskaber</a>
@@ -129,8 +129,17 @@
         ml
       </h5>
 
-      <div class="Produkt_info">
+      <div
+        class="Produkt_info"
+        data-name="K18 AirWash Dry Shampoo 118 ml"
+        data-price="249"
+      >
         <h1>K18 AirWash Dry Shampoo 118 ml</h1>
+        <img
+          src="img/AirWashDryShampoo_bottle.webp"
+          alt="K18 AirWash Dry Shampoo 118 ml"
+          style="display: none"
+        />
         <ul>
           <li>
             Fjerner effektivt olie, snavs og lugt fra hår og hovedbund uden at
@@ -164,9 +173,13 @@
           </div>
           <img src="img/heart.svg" alt="heart icon" class="heart-icon" />
         </div>
-        <button class="add-to-cart-button">
-          Tilføj til kurv <class="add-to-basket" type="button" aria-label="Læg i kurv">
-            <span class="material-symbols-rounded">shopping_bag</span>
+        <button
+          class="add-to-cart-button"
+          type="button"
+          aria-label="Læg i kurv"
+        >
+          Tilføj til kurv
+          <span class="material-symbols-rounded">shopping_bag</span>
         </button>
         <button class="check-stock-button">
           Tjek lagerstatus i fysisk butik
@@ -191,7 +204,11 @@
     <div class="Ligende_Produkter_sektion">
       <h1>Lignende Produkter</h1>
       <div class="Ligende_Produkter_Container">
-        <div class="Ligende_Produkt">
+        <div
+          class="Ligende_Produkt"
+          data-name="K18 Leave-In Molecular Repair Hair Mask 15 ml"
+          data-price="299"
+        >
           <img src="img/ligende_produkter_1.jpg" alt="produkt billede" />
           <h3>K18 Leave-In Molecular Repair Hair Mask 15 ml</h3>
           <h4>299,00 kr</h4>
@@ -199,7 +216,11 @@
             <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
-        <div class="Ligende_Produkt">
+        <div
+          class="Ligende_Produkt"
+          data-name="K18 Molecular Repair Hair Oil 30 ml"
+          data-price="479"
+        >
           <img src="img/ligende_Produkt_2.jpg" alt="produkt billede" />
           <h3>K18 Molecular Repair Hair Oil 30 ml</h3>
           <h4>479,00 kr</h4>
@@ -207,7 +228,11 @@
             <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
-        <div class="Ligende_Produkt">
+        <div
+          class="Ligende_Produkt"
+          data-name="Kevin Murphy Fresh hair 250 ml"
+          data-price="238"
+        >
           <img src="img/ligende_produkt_3.jpg" alt="produkt billede" />
           <h3>Kevin Murphy Fresh hair 250 ml</h3>
           <h4>238,00 kr</h4>
@@ -215,7 +240,11 @@
             <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
-        <div class="Ligende_Produkt">
+        <div
+          class="Ligende_Produkt"
+          data-name="Sayran Professional Shampoo Opener - 150 ml"
+          data-price="149"
+        >
           <img src="img/Ligende_produkt_4.webp" alt="produkt billede" />
           <h3>Sayran Professional Shampoo Opener - 150 ml</h3>
           <h4>149,00 kr</h4>
@@ -248,7 +277,6 @@
           </div>
         </div>
 
-
         <div class="footer-section">
           <h3>Butikkens åbningstider</h3>
           <p>Man–Fre 09.00–18.00</p>
@@ -257,7 +285,6 @@
           <h3 class="footer-subtitle">Adresse</h3>
           <p>Jagtvej 1 2200 Nørrebro</p>
         </div>
-
 
         <div class="footer-section">
           <h3>Information</h3>
@@ -270,7 +297,6 @@
           <p>Fortrydelsesformular</p>
           <p>Cookie Information</p>
         </div>
-
 
         <div class="footer-section">
           <h3>Kundeservice</h3>
@@ -286,6 +312,6 @@
         </div>
       </div>
     </footer>
-    <script src="JS/headermenu.js"></script>
+    <script src="js/headermenu.js"></script>
   </body>
 </html>
