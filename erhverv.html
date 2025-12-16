@@ -9,10 +9,119 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/erhverv.css" />
+    <link rel="stylesheet" href="css/headermenu.css" />
+
   </head>
   <body>
-    <header>HEADER</header>
-    <br />
+     <header class="site-header">
+      <div class="bar">
+        <button
+          class="icon-btn burger"
+          type="button"
+          aria-label="Åbn menu"
+          aria-controls="drawer"
+          aria-expanded="false"
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        </button>
+
+        <a class="brand" href="index.html" aria-label="Gå til forsiden">
+          <img src="img/Asset_1.svg" alt="OS Frisørartikler" />
+        </a>
+
+        <nav class="actions" aria-label="Genveje">
+          <a class="icon-btn" href="#" id="searchBtn" aria-label="Søg">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >search</span
+            >
+          </a>
+
+          <div class="dropdown search-panel" hidden>
+            <input
+              type="search"
+              placeholder="Søg efter produkter…"
+              aria-label="Søg"
+            />
+          </div>
+
+          <a class="icon-btn" href="#" id="accountBtn" aria-label="Konto">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >person</span
+            >
+          </a>
+
+          <div class="dropdown account-panel" hidden>
+            <h3>Konto</h3>
+            <p>Log ind for at se ordrer og gemme favoritter.</p>
+            <button class="panel-btn" type="button">Log ind</button>
+          </div>
+
+          <a class="icon-btn" href="#" id="favBtn" aria-label="Favoritter">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >favorite</span
+            >
+          </a>
+
+          <div class="dropdown fav-panel" hidden>
+            <h3>Favoritter</h3>
+            <p>Du har ingen favoritter endnu.</p>
+          </div>
+
+          <a class="icon-btn" href="#" id="cartBtn" aria-label="Kurv">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >shopping_bag</span
+            >
+            <span class="badge" aria-hidden="true">0</span>
+          </a>
+
+          <div class="dropdown cart-panel" hidden>
+            <h3>Din kurv</h3>
+
+            <p class="cart-empty">Du har ikke puttet noget i din kurv endnu.</p>
+
+            <ul class="cart-items" hidden></ul>
+
+            <div class="cart-footer" hidden>
+              <p class="cart-total">
+                I alt:
+                <strong><span class="cart-total-value">0</span>,00 kr</strong>
+              </p>
+              <a href="betaling.html" class="checkout-btn">Gå til betaling</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="backdrop" hidden></div>
+
+      <aside class="drawer" id="drawer" hidden>
+        <div class="drawer-top">
+          <p class="drawer-title">Menu</p>
+          <button class="icon-btn close" type="button" aria-label="Luk menu">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+        </div>
+
+        <nav class="drawer-nav" aria-label="Kategorier">
+          <a href="index.html">Forside</a>
+          <a href="404.html">Hårpleje</a>
+          <a href="404.html">Styling</a>
+          <a href="404.html">Farve</a>
+          <a href="404.html">Redskaber</a>
+          <a href="404.html">Skæg & herre</a>
+          <a href="404.html">Tilbud</a>
+          <a href="404.html">Nyheder</a>
+          <a href="404.html">Kontakt</a>
+        </nav>
+
+        <div class="drawer-bottom">
+          <a class="drawer-link" href="forareforare.html">Se alle kategorier</a>
+        </div>
+      </aside>
+    </header>
+    <main>
 
     <section id="billede_1">
       <img class="img_erhverv" src="img/IMG_4209.JPG" alt="header_billede" />
@@ -95,7 +204,9 @@
     <section id="billede_5">
       <img src="img/IMG_4254.JPG" alt="header_billede" />
     </section>
-    <br />
+    
+    </main>
+    <script src="js/headermenu.js"></script>
   </body>
 
   <footer>FOOTER</footer>
