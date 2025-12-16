@@ -5,9 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/produkt.css" />
+    <link rel="stylesheet" href="css/headermenu.css" />
+    <link rel="stylesheet" href="css/oversigt.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <title>Produkt Side</title>
   </head>
+  
   <body>
+        <header class="site-header">
+      <div class="bar">
+        <button
+          class="icon-btn burger"
+          type="button"
+          aria-label="Åbn menu"
+          aria-controls="drawer"
+          aria-expanded="false"
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        </button>
+
+        <a class="brand" href="index.html" aria-label="Gå til forsiden">
+          <img src="img/Asset_1.svg" alt="OS Frisørartikler" />
+        </a>
+
+        <nav class="actions" aria-label="Genveje">
+          <a class="icon-btn" href="#" id="searchBtn" aria-label="Søg">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >search</span
+            >
+          </a>
+
+          <div class="dropdown search-panel" hidden>
+            <input
+              type="search"
+              placeholder="Søg efter produkter…"
+              aria-label="Søg"
+            />
+          </div>
+
+          <a class="icon-btn" href="#" id="accountBtn" aria-label="Konto">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >person</span
+            >
+          </a>
+
+          <div class="dropdown account-panel" hidden>
+            <h3>Konto</h3>
+            <p>Log ind for at se ordrer og gemme favoritter.</p>
+            <button class="panel-btn" type="button">Log ind</button>
+          </div>
+
+          <a class="icon-btn" href="#" id="favBtn" aria-label="Favoritter">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >favorite</span
+            >
+          </a>
+
+          <div class="dropdown fav-panel" hidden>
+            <h3>Favoritter</h3>
+            <p>Du har ingen favoritter endnu.</p>
+          </div>
+
+          <a class="icon-btn" href="#" id="cartBtn" aria-label="Kurv">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >shopping_bag</span
+            >
+            <span class="badge" aria-hidden="true">0</span>
+          </a>
+
+          <div class="dropdown cart-panel" hidden>
+            <h3>Din kurv</h3>
+
+            <p class="cart-empty">Du har ikke puttet noget i din kurv endnu.</p>
+
+            <ul class="cart-items" hidden></ul>
+
+            <div class="cart-footer" hidden>
+              <p class="cart-total">
+                I alt:
+                <strong><span class="cart-total-value">0</span>,00 kr</strong>
+              </p>
+              <a href="betaling.html" class="checkout-btn">Gå til betaling</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="backdrop" hidden></div>
+
+      <aside class="drawer" id="drawer" hidden>
+        <div class="drawer-top">
+          <p class="drawer-title">Menu</p>
+          <button class="icon-btn close" type="button" aria-label="Luk menu">
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close</span
+            >
+          </button>
+        </div>
+
+        <nav class="drawer-nav" aria-label="Kategorier">
+          <a href="index.html">Forside</a>
+          <a href="404.html">Hårpleje</a>
+          <a href="404.html">Styling</a>
+          <a href="404.html">Farve</a>
+          <a href="404.html">Redskaber</a>
+          <a href="404.html">Skæg & herre</a>
+          <a href="404.html">Tilbud</a>
+          <a href="404.html">Nyheder</a>
+          <a href="404.html">Kontakt</a>
+        </nav>
+
+        <div class="drawer-bottom">
+          <a class="drawer-link" href="forareforare.html">Se alle kategorier</a>
+        </div>
+      </aside>
+    </header>
     <div class="product-hero">
       <h5 class="breadcrumb">
         Forsiden > Hårpleje > Hårpleje > Shampoo > K18 AirWash Dry Shampoo 118
@@ -50,7 +165,8 @@
           <img src="img/heart.svg" alt="heart icon" class="heart-icon" />
         </div>
         <button class="add-to-cart-button">
-          Tilføj til kurv <img src="img/shopping-bag.svg" alt="shopping bag" />
+          Tilføj til kurv <class="add-to-basket" type="button" aria-label="Læg i kurv">
+            <span class="material-symbols-rounded">shopping_bag</span>
         </button>
         <button class="check-stock-button">
           Tjek lagerstatus i fysisk butik
@@ -79,32 +195,32 @@
           <img src="img/ligende_produkter_1.jpg" alt="produkt billede" />
           <h3>K18 Leave-In Molecular Repair Hair Mask 15 ml</h3>
           <h4>299,00 kr</h4>
-          <button class="add-to-cart-button">
-            Tilføj til kurv <img src="img/shopping-bag.svg" alt="" />
+          <button class="add-to-basket" type="button" aria-label="Læg i kurv">
+            <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
         <div class="Ligende_Produkt">
           <img src="img/ligende_Produkt_2.jpg" alt="produkt billede" />
           <h3>K18 Molecular Repair Hair Oil 30 ml</h3>
           <h4>479,00 kr</h4>
-          <button class="add-to-cart-button">
-            Tilføj til kurv <img src="img/shopping-bag.svg" alt="" />
+          <button class="add-to-basket" type="button" aria-label="Læg i kurv">
+            <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
         <div class="Ligende_Produkt">
           <img src="img/ligende_produkt_3.jpg" alt="produkt billede" />
           <h3>Kevin Murphy Fresh hair 250 ml</h3>
           <h4>238,00 kr</h4>
-          <button class="add-to-cart-button">
-            Tilføj til kurv <img src="img/shopping-bag.svg" alt="" />
+          <button class="add-to-basket" type="button" aria-label="Læg i kurv">
+            <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
         <div class="Ligende_Produkt">
           <img src="img/Ligende_produkt_4.webp" alt="produkt billede" />
           <h3>Sayran Professional Shampoo Opener - 150 ml</h3>
           <h4>149,00 kr</h4>
-          <button class="add-to-cart-button">
-            Tilføj til kurv <img src="img/shopping-bag.svg" alt="" />
+          <button class="add-to-basket" type="button" aria-label="Læg i kurv">
+            <span class="material-symbols-rounded">shopping_bag</span>
           </button>
         </div>
       </div>
@@ -132,7 +248,7 @@
           </div>
         </div>
 
-        <!-- Opening Hours -->
+
         <div class="footer-section">
           <h3>Butikkens åbningstider</h3>
           <p>Man–Fre 09.00–18.00</p>
@@ -142,7 +258,7 @@
           <p>Jagtvej 1 2200 Nørrebro</p>
         </div>
 
-        <!-- Information Links -->
+
         <div class="footer-section">
           <h3>Information</h3>
           <p>Om Virksomheden</p>
@@ -155,7 +271,7 @@
           <p>Cookie Information</p>
         </div>
 
-        <!-- Customer Service -->
+
         <div class="footer-section">
           <h3>Kundeservice</h3>
           <p>OS Frisørartikler APS</p>
@@ -170,5 +286,6 @@
         </div>
       </div>
     </footer>
+    <script src="JS/headermenu.js"></script>
   </body>
 </html>
