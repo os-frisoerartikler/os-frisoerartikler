@@ -119,19 +119,20 @@
 
 .category-intro {
   max-width: 700px;
-  margin: 0 0 26px;
+  margin: 60px auto 50px;
+  padding: 0 16px;
 }
 
 .category-title {
-  margin: 0 0 10px;
+  margin-bottom: 16px;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .category-text {
-  margin: 0;
-  line-height: 1.65;
-  color: #374151;
+  line-height: 1.75;
+  color: #666666;
+  max-width: 60ch;
 }
 
 .section-title {
@@ -224,7 +225,8 @@
 .Produkt_Section_3-1 img {
   width: 100%;
   height: 100%;
-  min-height: 360px;
+  margin-bottom: 2rem;
+  min-height: 320px;
   display: block;
   object-fit: cover;
 }
@@ -245,7 +247,7 @@
 .Text_1 p,
 .Text_2 p,
 .Text_3 p {
-  margin: 0;
+  margin-bottom: 2rem;
   line-height: 1.65;
 }
 
@@ -288,5 +290,50 @@
 @media (max-width: 800px) {
   .grid_1-1-1-1 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+.produkt-kort {
+  position: relative;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.produkt-kort:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.produkt-kort .card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.produkt-kort .add-to-cart {
+  position: relative;
+  z-index: 2;
+}
+
+.produkt-kort:hover h4 {
+  text-decoration: underline;
+}
+
+.produkt-kort img {
+  border-radius: 8px;
+}
+
+@media (hover: hover) {
+  .produkt-kort:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .produkt-kort:hover h4 {
+    text-decoration: underline;
   }
 }
