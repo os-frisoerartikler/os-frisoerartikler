@@ -1,25 +1,108 @@
 /*GENERAL*/
-
-/*FØRSTE SEKTION*/
-#billede_1 /*class: img_erhverv*/ {
-  display: grid;
-  /*   max-width: 100%;
-  height: 60%; */
-}
-
-/*ANDEN SEKTION, DISCOVER (VENT PÅ YVONNE'S KODE)*/
-
-#grid_discover {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  align-items: center;
-  border: 30px;
-  border-radius: 10px;
+body {
   margin: 1rem;
 }
 
-#grid_discover img {
-  padding: 1rem;
+/*FØRSTE SEKTION*/
+#billede_1 {
+  display: grid;
+    max-width: 100%;
+  height: 80v;
+}
+
+/*ANDEN SEKTION, DISCOVER (YVONNE'S KODE)*/
+
+.slide4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#slide4_text {
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  color: #8a0f0f;
+}
+
+.carousel_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 3rem;
+}
+
+.carousel_wrapper_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.category_carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.carousel_track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /*noget til firefox*/
+}
+
+.carousel_track::-webkit-scrollbar {
+  display: none; /*noget til chrome/safari*/
+}
+
+.category {
+  flex: 0 0 20%;
+  max-width: 250px;
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  span {
+    color: #8a0f0f;
+  }
+}
+.category img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #acb4a0;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  margin-left: 3rem;
+}
+
+.arrow.right {
+  margin-right: 3rem;
 }
 
 /*TREDJE SEKTION, STORT BILLEDE M. NYE PRODUKTER. 
@@ -29,36 +112,6 @@ LAV TEKST OVER BILLEDE*/
   display: grid;
   max-width: 100%;
   height: 75%;
-}
-
-/*FJERDE SEKTION, INSPIRATION*/
-
-#grid_inspiration {
-  display: flex;
-  flex-direction: columns;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  align-items: center;
-  padding: 1rem;
-  justify-content: center;
-}
-
-#grid_inspiration img {
-  height: 300px;
-  width: 300px;
-  padding: 1rem;
-}
-
-.grid_tekst h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem;
-}
-
-.grid_tekst p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /*TEKST OVENPÅ EKSEMPEL*/
@@ -76,17 +129,17 @@ LAV TEKST OVER BILLEDE*/
 
 .tekst_ovenpå {
   position: absolute;
-  top: 20%; /* centrerer vertikalt */
-  left: 85%; /* centrerer horisontalt */
+  top: 40%; /* centrerer vertikalt */
+  left: 80%; /* centrerer horisontalt */
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
-  background-color: rgb(176, 220, 157);
+  background-color: #acb4a0;
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* gør teksten mere læsbar */
   padding: 2rem 2rem 4rem 2rem;
   width: 25%;
-  height: 40%;
+  height: 50%;
 }
 
 .button {
@@ -100,11 +153,50 @@ LAV TEKST OVER BILLEDE*/
 }
 
 .button a {
-  color: black;
+    color: #8a0f0f;
 }
 
 button:hover {
   background-color: rgba(18, 72, 11, 0.719);
+}
+
+/*FJERDE SEKTION, INSPIRATION*/
+
+#grid_inspiration {
+  display: flex;
+  flex-direction: columns;
+  align-items: center;
+  padding: 1rem;
+  justify-content: center;
+  background-color: #acb4a0;
+}
+
+#grid_inspiration img {
+  height: 300px;
+  width: 300px;
+  padding: 1rem;
+}
+
+
+#grid_inspiration p {
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+
+}
+
+.grid_tekst h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.grid_tekst p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 /*FEMTE SEKTION, BILLEDE 5*/
@@ -112,4 +204,87 @@ button:hover {
 #billede_5 img {
   max-width: 100%;
   height: 50%;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+
+  /* FØRSTE SEKTION */
+  #billede_1 {
+    display: block;
+    width: 100%;
+  }
+
+  /* ANDEN SEKTION – DISCOVER */
+  .slide4 {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .carousel_wrapper {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .category {
+    flex: 0 0 60%;
+    max-width: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  .category img {
+    height: 150px;
+  }
+
+  .arrow.left,
+  .arrow.right {
+    margin: 0;
+  }
+
+  /* TREDJE SEKTION – NYE PRODUKTER */
+  #grid_nye_produkter img {
+    height: auto;
+  }
+
+  .tekst_ovenpå {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  /* FJERDE SEKTION – INSPIRATION */
+  #grid_inspiration {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  #grid_inspiration img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .grid_tekst h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .grid_tekst p {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* FEMTE SEKTION */
+  #billede_5 img {
+    height: auto;
+  }
+}
+
 }
