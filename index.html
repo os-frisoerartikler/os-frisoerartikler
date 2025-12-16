@@ -11,61 +11,121 @@
   <body>
     <header></header>
     <div class="slideshow">
-      <section class="slide" id="slide1">
-        <div class="slide1_text">
-          <div>
-            <h3>Professional comfortability</h3>
-            <h1>OS quality hair care</h1>
-            <p>
-              Soft curls or a clean haircut, find all your hairy needs in OS
-              shop
-            </p>
-          </div>
+      <!-- SLIDE 1 -->
+      <section class="slide slide1 hero">
+        <video autoplay muted loop playsinline>
+          <source src="img/herobanner.mp4" type="video/mp4" />
+        </video>
+        <div class="slide1_text hero_content">
+          <h3>Professional comfortability</h3>
+          <h1>OS quality hair care</h1>
+          <p>
+            Soft curls or a clean haircut, find all your hairy needs in OS shop
+          </p>
           <div id="button_2">
             <a href="" class="button">Private</a>
             <a href="erhverv.html" class="button">Company</a>
           </div>
         </div>
       </section>
-      <section class="slide">
-        <!-- insert img -->
-        <h1>December sales</h1>
-        <h2>Get jolly with glistening hair for Christmas</h2>
-        <p>
-          Shop before December 24th and save up to 60% on an assortment of
-          quality brands.
-        </p>
-        <a href="" class="button">Learn more</a>
-      </section>
-      <section class="slide">
-        <!-- insert img -->
-        <h1>New showroom</h1>
-        <h2>It's showtime!</h2>
-        <p>
-          Come visit our new showroom in Skovlunde and experience our
-          professional inventory of the highest quality.
-        </p>
-        <a href="" class="button">Learn more</a>
-      </section>
-      <section class="slide">
-        <h1>Discorver by category</h1>
-        <p>Our inventory is quite big, let us help you out a little bit.</p>
-        <div>
-          <!-- insert grid and img -->
+
+      <!-- SLIDE 2 -->
+      <section class="slide slide2">
+        <img
+          src="img/IMG_4209.JPG"
+          alt="billede af hårprodukter"
+          id="december_sales_img"
+        />
+        <div id="slide2_text">
+          <h1>December sales</h1>
+          <h2>Get jolly with glistening hair for Christmas</h2>
+          <p>
+            Shop before December 24th and save up to 60% on an assortment of
+            quality brands.
+          </p>
+          <a href="" class="button">Learn more →</a>
         </div>
       </section>
-      <section class="slide">
-        <h1>OS history</h1>
-        <h2>We care about your hair.</h2>
-        <p>
-          Omar and Salar has since 2015 sold not only salon products, but a
-          passion for hair. Taking pride in top quality customer service as well
-          as an inventory to reflect it. Trust and transparency has top priority
-          when it comes to you and your hairdresser.
-        </p>
-        <a href="" class="button">Read article</a>
+
+      <!-- SLIDE 3 -->
+      <section class="slide slide3">
+        <img
+          src="img/IMG_4253.JPG"
+          alt="billede af hårtrimmere"
+          id="new_showroom_img"
+        />
+        <div id="slide3_text">
+          <h1>New showroom</h1>
+          <h2>It's showtime!</h2>
+          <p>
+            Come visit our new showroom in Skovlunde and experience our
+            professional inventory of the highest quality.
+          </p>
+          <a href="" class="button">Learn more →</a>
+        </div>
+      </section>
+
+      <!-- SLIDE 4 -->
+      <section class="slide slide4">
+        <div class="slide4_content">
+          <div id="slide4_text">
+            <h1>Discover by category</h1>
+            <p>Our inventory is quite big, let us help you out a little bit.</p>
+          </div>
+
+          <div class="carousel_wrapper">
+            <button class="arrow left">&lt;</button>
+
+            <div class="category_carousel">
+              <div class="carousel_track">
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Hair care</span>
+                </div>
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Electronics</span>
+                </div>
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Salon accessories</span>
+                </div>
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Personal care</span>
+                </div>
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Scissors & barbering</span>
+                </div>
+                <div class="category">
+                  <img src="img/IMG_4243.JPG" alt="" />
+                  <span>Sale</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="arrow right">&gt;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5 -->
+      <section class="slide slide5 hero_img">
+        <div class="hero_img_text">
+          <h1>OS history</h1>
+          <h2>We care about your hair.</h2>
+          <p>
+            Omar and Salar has since 2015 sold not only salon products, but a
+            passion for hair. Taking pride in top quality customer service as
+            well as an inventory to reflect it. Trust and transparency has top
+            priority when it comes to you and your hairdresser.
+          </p>
+          <a href="" class="button">Read article →</a>
+        </div>
       </section>
     </div>
     <footer></footer>
+    <script src="js/forside.js"></script>
   </body>
 </html>

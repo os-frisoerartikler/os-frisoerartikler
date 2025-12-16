@@ -1,0 +1,4 @@
+# macOS: ignore Finder metadata files (match in any directory)
+# Matches `.DS_Store` in repo root and in any subdirectory
+.DS_Store
+**/.DS_Store
