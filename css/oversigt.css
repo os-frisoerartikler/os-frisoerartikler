@@ -214,7 +214,7 @@
 .Produkt_Section_3-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 5;
   margin: 2.5rem 0;
   overflow: hidden;
 }
@@ -233,6 +233,7 @@
 .Text_2,
 .Text_3 {
   padding: 2.5rem;
+  gap: 5;
 }
 
 .Text_1 h2,
