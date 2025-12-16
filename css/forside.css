@@ -7,23 +7,387 @@
 .slide {
   scroll-snap-align: start;
   height: 100vh;
-  /* display: grid;
-  place-items: center; */
 }
 
-#slide1 {
-  display: grid;
-  place-items: center;
-  justify-self: center;
+img {
+  max-height: 100vh;
+  object-fit: contain;
 }
 
-.slide1_text {
+.slide2 img,
+.slide3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SLIDE 1 - FRONT PAGE */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero_content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   text-align: center;
+  padding-bottom: 6rem;
+  h1 {
+    color: #fffef2;
+    text-transform: uppercase;
+  }
+  h3 {
+    color: #fffef2;
+  }
+  p {
+    color: #fffef2;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 #button_2 {
   display: flex;
-  justify-content: center;
+  gap: 6rem;
+  a {
+    text-transform: uppercase;
+  }
 }
 
-/* make the header / menu sticky and make sure the footer aint */
+/* SLIDE 2 - DECEMBER SALES */
+.slide2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+  background-color: #8a0f0f;
+  h1 {
+    color: #fffef2;
+    text-transform: uppercase;
+    margin: 10rem 4rem 0rem 4rem;
+  }
+  h2 {
+    color: #fffef2;
+    margin: 0rem 4rem 0rem 4rem;
+  }
+  p {
+    color: #fffef2;
+    margin: 2rem 4rem 1rem 4rem;
+  }
+  .button {
+    margin: 1rem 4rem 0rem 4rem;
+  }
+}
+
+#december_sales_img {
+  grid-area: 1/2/2/3;
+}
+
+#slide2_text {
+  grid-area: 1/1/2/2;
+}
+
+/* SLIDE 3 - NEW SHOWROOM */
+.slide3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 100vh;
+  background-color: #acb4a0;
+  h1 {
+    color: #fffef2;
+    text-transform: uppercase;
+    margin: 10rem 4rem 0rem 4rem;
+  }
+  h2 {
+    color: #fffef2;
+    margin: 0rem 4rem 0rem 4rem;
+  }
+  p {
+    color: #fffef2;
+    margin: 2rem 4rem 1rem 4rem;
+  }
+  .button {
+    margin: 1rem 4rem 0rem 4rem;
+  }
+}
+
+#new_showroom_img {
+  grid-area: 1/1/2/2;
+}
+
+#slide3_text {
+  grid-area: 1/2/2/3;
+}
+
+/* SLIDE 4 - DISCOVER */
+.slide4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#slide4_text {
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  color: #8a0f0f;
+}
+
+.carousel_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 3rem;
+}
+
+.carousel_wrapper_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.category_carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.carousel_track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /*noget til firefox*/
+}
+
+.carousel_track::-webkit-scrollbar {
+  display: none; /*noget til chrome/safari*/
+}
+
+.category {
+  flex: 0 0 20%;
+  max-width: 250px;
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  span {
+    color: #8a0f0f;
+  }
+}
+.category img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: #acb4a0;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  margin-left: 3rem;
+}
+
+.arrow.right {
+  margin-right: 3rem;
+}
+
+/* SLIDE 5 - HISTORY */
+.hero_img {
+  position: relative;
+  width: 100%;
+  height: 100vh; /*!!!!! */
+  background: url(../img/omar_salar.webp) center/cover no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+  color: #fffef2;
+}
+
+.hero_img_text {
+  margin-bottom: 5rem;
+  width: 30%;
+  h1 {
+    text-transform: uppercase;
+    margin: 10rem 0rem 0rem 5rem;
+  }
+  h2 {
+    margin: 0rem 0rem 0rem 5rem;
+  }
+  p {
+    margin: 2rem 0rem 1rem 5rem;
+  }
+  .button {
+    margin: 1rem 0rem 0rem 5rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 425px) {
+  /* SLIDE 2 */
+  .slide2 {
+    display: flex;
+    background-image: url(../img/IMG_4209.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+    h1 {
+      margin: 1.5rem 3rem 0rem 3rem;
+    }
+    h2 {
+      margin: 0rem 3rem 0rem 3rem;
+    }
+    p {
+      margin: 1rem 3rem 1rem 3rem;
+    }
+    .button {
+      margin: 1rem 3rem 0rem 3rem;
+    }
+  }
+
+  #slide2_text {
+    background-color: #8a0f0f;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-radius: 10px 10px 0 0;
+  }
+
+  /* SLIDE 3 */
+  .slide3 {
+    display: flex;
+    background-image: url(../img/IMG_4253.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    align-items: flex-end;
+    justify-content: center;
+    h1 {
+      margin: 1.5rem 3rem 0rem 3rem;
+    }
+    h2 {
+      margin: 0rem 3rem 0rem 3rem;
+    }
+    p {
+      margin: 1rem 3rem 1rem 3rem;
+    }
+    .button {
+      margin: 1rem 3rem 0rem 3rem;
+    }
+  }
+
+  #new_showroom_img,
+  #december_sales_img {
+    display: none;
+  }
+
+  #slide3_text {
+    background-color: #acb4a0;
+    width: 100%;
+    padding-bottom: 2rem;
+    border-radius: 10px 10px 0 0;
+  }
+
+  /* SLIDE 4 */
+  .slide4 {
+    padding: 2rem 1rem;
+  }
+
+  .slide4_content {
+    align-items: stretch;
+  }
+
+  .category_carousel {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    width: 100vw;
+  }
+
+  .carousel_track {
+    display: flex;
+  }
+
+  .category {
+    flex: 0 0 60%;
+    max-width: 60%;
+    scroll-snap-align: start;
+  }
+
+  .category img {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  /* SLIDE 5 */
+  .hero_img_text {
+    margin-bottom: 3rem;
+    width: 80%;
+    h1 {
+      text-transform: uppercase;
+      margin: 10rem 0rem 0rem 3rem;
+    }
+    h2 {
+      margin: 0rem 0rem 0rem 3rem;
+    }
+    p {
+      margin: 2rem 0rem 1rem 3rem;
+    }
+    .button {
+      margin: 1rem 0rem 0rem 3rem;
+    }
+  }
+}

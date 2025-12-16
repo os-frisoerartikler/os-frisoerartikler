@@ -63,9 +63,31 @@ p {
 .button {
   color: var(--the-brown);
   background-color: var(--the-grey);
-  padding: 1rem;
   border-radius: 10px;
   text-decoration: none;
   font-size: var(--h4-size);
   font-weight: var(--font-weight-medium);
+  flex: 1; /* all buttons take equal width */
+  text-align: center;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  html {
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2,
+    h3 {
+      font-size: 1rem;
+    }
+    h4,
+    h5,
+    p,
+    .button,
+    span {
+      font-size: 0.75rem;
+    }
+  }
 }
