@@ -1,4 +1,3 @@
-// JS/headermenu.js
 document.addEventListener("DOMContentLoaded", () => {
   const actions = document.querySelector(".actions");
   if (!actions) return;
