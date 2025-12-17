@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/produkt.css" />
     <link rel="stylesheet" href="css/headermenu.css" />
     <link rel="stylesheet" href="css/oversigt.css" />
+    <link rel="icon" type="image/png" href="img/SVGred.svg" />
+    <meta name="robots" content="noindex" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -125,8 +127,9 @@
     </header>
     <div class="product-hero">
       <h5 class="breadcrumb">
-        Forsiden > Hårpleje > Hårpleje > Shampoo > K18 AirWash Dry Shampoo 118
-        ml
+        <a href="index.html">Forsiden</a> > Hårpleje > Hårpleje >
+        <a href="oversigt.html">Shampoo</a> >
+        <a href="produkt.html">K18 AirWash Dry Shampoo 118 ml</a>
       </h5>
 
       <div
@@ -193,11 +196,40 @@
       </div>
 
       <div class="Produkt_Imgs">
-        <img src="img/AirWashDryShampoo_bottle.webp" alt="shampoo image 1" />
-        <img src="img/AirWash_Img_2.webp" alt="shampoo image 2" />
-        <img src="img/AirWash_Img_3.webp" alt="shampoo image 3" />
-        <img src="img/AirWash_Img_4.webp" alt="shampoo image 4" />
-        <img src="img/AirWash_background.webp" alt="shampoo image 5" />
+        <button popovertarget="pop1" class="img-btn">
+          <img src="img/AirWashDryShampoo_bottle.webp" alt="shampoo image 1" />
+        </button>
+        <div id="pop1" popover>
+          <img src="img/AirWashDryShampoo_bottle.webp" alt="shampoo image 1" />
+        </div>
+
+        <button popovertarget="pop2" class="img-btn">
+          <img src="img/AirWash_Img2.webp" alt="shampoo image 2" />
+        </button>
+        <div id="pop2" popover>
+          <img src="img/AirWash_Img2.webp" alt="shampoo image 2" />
+        </div>
+
+        <button popovertarget="pop3" class="img-btn">
+          <img src="img/AirWash_Img_3.webp" alt="shampoo image 3" />
+        </button>
+        <div id="pop3" popover>
+          <img src="img/AirWash_Img_3.webp" alt="shampoo image 3" />
+        </div>
+
+        <button popovertarget="pop4" class="img-btn">
+          <img src="img/AirWash_Img_4.webp" alt="shampoo image 4" />
+        </button>
+        <div id="pop4" popover>
+          <img src="img/AirWash_Img_4.webp" alt="shampoo image 4" />
+        </div>
+
+        <button popovertarget="pop5" class="img-btn">
+          <img src="img/AirWash_background.webp" alt="shampoo image 5" />
+        </button>
+        <div id="pop5" popover>
+          <img src="img/AirWash_background.webp" alt="shampoo image 5" />
+        </div>
       </div>
     </div>
 
