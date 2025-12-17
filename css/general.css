@@ -74,6 +74,10 @@ p {
   max-width: fit-content;
 }
 
+.button:hover {
+  background-color: var(--the-white);
+}
+
 @media (max-width: 425px) {
   html {
     h1 {
