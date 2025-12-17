@@ -325,6 +325,13 @@ img {
 
 /* MOBILE */
 @media (max-width: 425px) {
+  /* SLIDE 1 */
+  #button_2 {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
   /* SLIDE 2 */
   .slide2 {
     display: flex;
