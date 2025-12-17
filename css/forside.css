@@ -66,6 +66,32 @@ img {
   display: block;
 }
 
+/* HEADER CHANGE COLOR */
+.site-header {
+  transition: background-color 0.22s ease, color 0.22s ease,
+    border-color 0.22s ease;
+  background: none;
+  color: #f6f5e8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.site-header.dark {
+  background: rgba(255, 255, 255, 0.95);
+  color: #8a0f0f;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.site-header.dark .material-symbols-rounded {
+  color: #8a0f0f;
+}
+.site-header.dark .brand svg path,
+.site-header.dark .brand svg g {
+  fill: #8a0f0f !important;
+  stroke: none !important;
+}
+
 /* FOOTER */
 .social-icons img {
   display: inline-block !important;
