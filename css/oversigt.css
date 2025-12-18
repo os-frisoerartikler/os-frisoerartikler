@@ -162,12 +162,14 @@
 
 .produkt-kort img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
 .produkt-kort h4 {
   margin: 0.5rem 0 0.25rem;
 }
+
 .product-meta {
   display: flex;
   align-items: center;
@@ -198,6 +200,7 @@
   font-size: 20px;
   place-items: right;
 }
+
 .produkt-kort .card-row {
   display: flex;
   align-items: center;
@@ -215,18 +218,18 @@
 .Produkt_Section_3-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5;
+  gap: 24px;
   margin: 2.5rem 0;
   overflow: hidden;
+  align-items: start;
 }
 
 .Produkt_Section_1-2 img,
 .Produkt_Section_1-3 img,
 .Produkt_Section_3-1 img {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-bottom: 2rem;
-  min-height: 320px;
   display: block;
   object-fit: cover;
 }
@@ -235,7 +238,7 @@
 .Text_2,
 .Text_3 {
   padding: 2.5rem;
-  gap: 5;
+  gap: 5px;
 }
 
 .Text_1 h2,
@@ -279,12 +282,6 @@
   .Text_3 {
     padding: 1.5rem;
   }
-
-  .Produkt_Section_1-2 img,
-  .Produkt_Section_1-3 img,
-  .Produkt_Section_3-1 img {
-    min-height: 260px;
-  }
 }
 
 @media (max-width: 800px) {
@@ -292,6 +289,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .produkt-kort {
   position: relative;
   padding: 12px;
